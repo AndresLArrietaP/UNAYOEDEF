@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using MiBotica.SolPedido.AccesoDatos.Core;
+using MiBotica.SolPedido.Entidades.Base;
+using MiBotica.SolPedido.Entidades.Core;
+using MiBotica.SolPedido.LogicaNegocio.Core;
+using MiBotica.SolPedido.Utiles.Helpers;
+
+namespace MiBotica.SolPedido.Cliente.Web.Controllers
+{
+    public class UsuarioController : BaseLN
+    {
+        // GET: Usuario
+        public ActionResult Index()
+        {
+            List<Usuario> usuario = new List<Usuario>();
+            usuario = new UsuarioLN().ListaUsuarios();
+            return View(usuario);
+        }
+
+        // GET: Usuario/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        //GET: Usuario/Create
+        public ActionResult Create()
+        {
+            Usuario usuario = new Usuario();
+            return View(usuario);
+        }
+
+        // POST: Usuario/Create
+        [HttpPost]
+        public ActionResult Create(FormCollection collection)
+        {
+            Usuario usuario = new Usuario();
+            usuario.Clave = collection["ClaveTexto"];
+            usuario.Correo = collection["CodUsuario"];
+            usuario.Nombre = collection["Nombres"];
+
+            try
+            {
+                // TODO: Add insert logic here                
+                usuario.ClaveE = EncriptacionHelper.EncriptarByte(usuario.Clave);
+                new UsuarioLN().InsertarUsuario(usuario);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Usuario/Edit/5
+        public ActionResult Edit(int id)
+        {
+            Usuario usuario = new Usuario();
+            usuario = new UsuarioLN().BuscarUsuario(id);
+            //usuario.ClaveTexto = EncriptacionHelper.DesencriptarByte(usuario.Clave);
+            return View(usuario);
+        }
+
+        // POST: Usuario/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            Usuario usuario = new Usuario();
+            usuario.Clave = collection["ClaveTexto"];
+            usuario.Correo = collection["CodUsuario"];
+            usuario.Nombre = collection["Nombres"];
+            //usuario.IdUsuario= id;
+            try
+            {
+                // TODO: Add update logic here
+                usuario.ClaveE = EncriptacionHelper.EncriptarByte(usuario.Clave);
+                new UsuarioLN().ModificarUsuario(usuario, id);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Usuario/Delete/5
+        public ActionResult Delete(int id)
+        {
+            Usuario usuario = new Usuario();
+            usuario = new UsuarioLN().BuscarUsuario(id);
+            //usuario.ClaveTexto = EncriptacionHelper.DesencriptarByte(usuario.Clave);
+            return View(usuario);
+        }
+
+        // POST: Usuario/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+                //Usuario usuario = new Usuario();
+                //usuario = new UsuarioLN().BuscarUsuario(id);
+                new UsuarioLN().EliminarUsuario(id);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+    }
+}
