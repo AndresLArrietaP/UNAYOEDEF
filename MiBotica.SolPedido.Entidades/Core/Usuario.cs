@@ -14,7 +14,7 @@ namespace MiBotica.SolPedido.Entidades.Core
         public string Correo { get; set; }
         public string Clave { get; set; }
         public string Codigo { get; set; }
-        public TipoUsuario oTipoPersona { get; set; }
+        public TipoUsuario oTipoPersona = new TipoUsuario();
         public bool Estado { get; set; }
         public string HoraI { get; set; }
         public string HoraS { get; set; }

@@ -39,10 +39,11 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         public ActionResult Create(FormCollection collection)
         {
             Usuario usuario = new Usuario();
-            usuario.Clave = collection["ClaveTexto"];
-            usuario.Correo = collection["CodUsuario"];
-            usuario.Nombre = collection["Nombres"];
-
+            usuario.Nombre = collection["Nombre"];
+            usuario.Apellido = collection["Apellido"];
+            usuario.Correo = collection["Correo"];
+            usuario.Clave = collection["Clave"];
+            usuario.oTipoPersona.IdTipoPersona =Convert.ToInt32(collection["oTipoPersona.IdTipoPersona"]);
             try
             {
                 // TODO: Add insert logic here                
@@ -61,7 +62,7 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         {
             Usuario usuario = new Usuario();
             usuario = new UsuarioLN().BuscarUsuario(id);
-            //usuario.ClaveTexto = EncriptacionHelper.DesencriptarByte(usuario.Clave);
+            usuario.Clave = EncriptacionHelper.DecriptarString(usuario.ClaveE);
             return View(usuario);
         }
 
@@ -70,9 +71,11 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         public ActionResult Edit(int id, FormCollection collection)
         {
             Usuario usuario = new Usuario();
-            usuario.Clave = collection["ClaveTexto"];
-            usuario.Correo = collection["CodUsuario"];
-            usuario.Nombre = collection["Nombres"];
+            usuario.Nombre = collection["Nombre"];
+            usuario.Apellido = collection["Apellido"];
+            usuario.Correo = collection["Correo"];
+            usuario.Clave = collection["Clave"];
+            usuario.oTipoPersona.IdTipoPersona = Convert.ToInt32(collection["oTipoPersona.IdTipoPersona"]);
             //usuario.IdUsuario= id;
             try
             {
@@ -92,7 +95,7 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         {
             Usuario usuario = new Usuario();
             usuario = new UsuarioLN().BuscarUsuario(id);
-            //usuario.ClaveTexto = EncriptacionHelper.DesencriptarByte(usuario.Clave);
+            usuario.Clave = EncriptacionHelper.DecriptarString(usuario.ClaveE);
             return View(usuario);
         }
 

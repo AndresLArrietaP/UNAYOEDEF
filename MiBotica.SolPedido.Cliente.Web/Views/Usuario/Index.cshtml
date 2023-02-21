@@ -28,17 +28,41 @@
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.IdUsuario)
+                    @Html.DisplayNameFor(model => model.IdPersona)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.CodUsuario)
+                    @Html.DisplayNameFor(model => model.Nombre)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Nombres)
+                    @Html.DisplayNameFor(model => model.Apellido)
                 </th>
                 <th>
-                    @*@Html.DisplayNameFor(model => model.ClaveTexto)*@
+                    @Html.DisplayNameFor(model => model.Correo)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.oTipoPersona.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Especialidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                @*<th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.HoraI)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HoraS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dias)
+                </th>
+                @*<th>
+            @Html.DisplayNameFor(model => model.ClaveTexto)
+        </th>*@
                 <th></th>
             </tr>
 
@@ -46,21 +70,45 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.IdUsuario)
+                        @Html.DisplayFor(modelItem => item.IdPersona)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CodUsuario)
+                        @Html.DisplayFor(modelItem => item.Nombre)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Nombres)
+                        @Html.DisplayFor(modelItem => item.Apellido)
                     </td>
                     <td>
-                        @*@Html.DisplayFor(modelItem => item.ClaveTexto)*@
+                        @Html.DisplayFor(modelItem => item.Correo)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.IdUsuario}) |
-                        @Html.ActionLink("Details", "Details", new {  id=item.IdUsuario }) |
-                        @Html.ActionLink("Delete", "Delete", new { id=item.IdUsuario })
+                        @Html.DisplayFor(modelItem => item.oTipoPersona.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Especialidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HoraI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HoraS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dias)
+                    </td>
+                    @*<td>
+                        @Html.DisplayNameFor(modelItem => model.ClaveTexto)
+                    </td>*@
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.IdPersona }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.IdPersona }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IdPersona })
                     </td>
                 </tr>
             }

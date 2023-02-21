@@ -41,6 +41,35 @@ namespace MiBotica.SolPedido.Utiles.Helpers
             return secretKey;
         }
 
+        public static string DecriptarString(byte[] EncryptedData)
+        {
+            try
+            {
+                RijndaelManaged RijndaelCipher = new RijndaelManaged();
+
+                Rfc2898DeriveBytes SecretKey = GetSecretKey();
+
+                ICryptoTransform Decryptor = RijndaelCipher.CreateDecryptor(SecretKey.GetBytes(32), SecretKey.GetBytes(16));
+                MemoryStream memoryStream = new MemoryStream(EncryptedData);
+
+                CryptoStream cryptoStream = new CryptoStream(memoryStream, Decryptor, CryptoStreamMode.Read);
+
+                byte[] PlainText = new byte[EncryptedData.Length];
+
+                int DecryptedCount = cryptoStream.Read(PlainText, 0, PlainText.Length);
+                memoryStream.Close();
+                cryptoStream.Close();
+
+                string DecryptedData = Encoding.UTF8.GetString(PlainText, 0, DecryptedCount);
+
+                return DecryptedData;
+            }
+            catch (Exception exception)
+            {
+                return ("ERROR: " + exception.Message);
+            }
+        }
+
     }
 
 
