@@ -30,7 +30,9 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         //GET: Usuario/Create
         public ActionResult Create()
         {
+
             Usuario usuario = new Usuario();
+            
             return View(usuario);
         }
 

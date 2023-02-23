@@ -72,11 +72,12 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="../../index2.html" class="logo">
+            <a href="~/Imagenes/UNAYOE.jpg" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
+                <img src="~/Imagenes/UNAYOE.jpg" style="width: 50px; height: 50px; float: left; padding: 4px; ">
+                <span class="logo-mini"><b>U</b>OE</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>UNA</b>YOE</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -305,7 +306,7 @@
                                     <li class="user-header">
                                         <img src="~/Content/dist/img/MVicente.jpg" class="img-circle" alt="User Image">
                                         <p>
-                                            @VariablesWeb.gUsuario.IdPersona -  @VariablesWeb.gUsuario.Nombre
+                                            @VariablesWeb.gUsuario.oTipoPersona.Descripcion @*-  @VariablesWeb.gUsuario.Nombre*@
                                             <small>Member since Nov. 2012</small>
                                         </p>
                                     </li>
@@ -404,7 +405,7 @@
                         <img src="~/Content/dist/img/MVicente.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>@VariablesWeb.gUsuario.Nombre</p>
+                        <p>@VariablesWeb.gUsuario.Nombre @VariablesWeb.gUsuario.Apellido</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -492,15 +493,15 @@
                         </ul>
                     </li>
                     <li class="treeview">
-                        <a href="#">
+                        <a href="https://localhost:44349/Usuario/Create">
                             <i class="fa fa-edit"></i>
-                            <span>AGREGAR</span>
+                            <span>AGREGAR U</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+                            <li><a href="https://localhost:44349/Usuario/Create"><i class="fa fa-circle-o"></i> General Elements</a></li>
                             <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
                             <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
                         </ul>
@@ -539,7 +540,7 @@
                             </span>
                         </a>
                     </li>
-                    <li class="treeview">
+                    @*<li class="treeview">
                         <a href="#">
                             <i class="fa fa-folder"></i>
                             <span>EJEMPLOS</span>
@@ -594,12 +595,12 @@
                             </li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                         </ul>
-                    </li>
+                    </li>*@
                     <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-                    <li class="header">TÌTULOS</li>
+                    @*<li class="header">TÌTULOS</li>
                     <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
                     <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>*@
                 </ul>
             </section>
             <!-- /.sidebar -->

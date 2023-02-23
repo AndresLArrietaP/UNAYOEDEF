@@ -20,37 +20,49 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
         <style>
-
-            .color-palette {
-                height: 35px;
-                line-height: 35px;
-                text-align: center;
-            }
-
-            .color-palette-set {
-                margin-bottom: 15px;
-            }
-
-            .color-palette span {
-                display: none;
-                font-size: 12px;
-            }
-
-            .color-palette:hover span {
-                display: block;
-            }
-
-            .color-palette-box h4 {
+            /* User image */
+            .loginscreen-image {
+                border-radius: 50%;
                 position: absolute;
-                top: 100%;
-                left: 25px;
-                margin-top: -40px;
-                color: rgba(255, 255, 255, 0.8);
-                font-size: 12px;
-                display: block;
-                z-index: 7;
+                left: -80px;
+                top: -40px;
+                background: #fff;
+                padding: 5px;
+                z-index: 10;
+            }
+
+                .loginscreen-image > img {
+                    border-radius: 50%;
+                    width: 140px;
+                    height: 140px;
+                }
+
+            .mb-4 {
+                margin-bottom: 50px;
             }
         </style>
+
+        <!-- Carga de archivos CSS -->
+        @Styles.Render("~/Content/css")
+
+        <!-- Carga de la biblioteca jQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <!-- Carga de archivos JavaScript -->
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+
+        <!-- Carga de archivos CSS -->
+        @Styles.Render("~/Content/css")
+
+        <!-- Carga de la biblioteca jQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <!-- Carga de archivos JavaScript -->
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
 
     </head>
     <body>
