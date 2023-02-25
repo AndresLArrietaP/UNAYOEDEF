@@ -13,8 +13,8 @@
     
     <div class="form-horizontal">
         <h4>Usuario</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
         @*<div class="form-group">
                 @Html.LabelFor(model => model.IdPersona, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -54,10 +54,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.oTipoPersona.IdTipoPersona, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.oTipoPersona.IdTipoPersona, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.oTipoPersona.IdTipoPersona, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.IdTipPer, new List<SelectListItem>
+                   { new SelectListItem{Text="Administrador", Value="1"},
+                     new SelectListItem{Text="Empleado UNAYOE", Value="2"},
+                     new SelectListItem { Text = "Empleado Unidad de bienestar", Value = "3" },
+                     new SelectListItem{Text="Secretario Unidad de bienestar", Value="4"},
+                     new SelectListItem{Text="Psicologo", Value="5"},
+                     new SelectListItem{Text="Estudiante", Value="6"} }, "--Selecciona--")
             </div>
         </div>
 
@@ -70,7 +75,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("VOLVER", "Index")
 </div>
 
 @section Scripts {

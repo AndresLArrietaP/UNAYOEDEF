@@ -30,9 +30,14 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         //GET: Usuario/Create
         public ActionResult Create()
         {
+            List<TipoUsuario> listarDescripcion = new List<TipoUsuario>();
+            UsuarioDA usuarioDA = new UsuarioDA();
+            listarDescripcion = usuarioDA.ListarDescripcion();
+
+            ViewBag.ListarDescripcion = listarDescripcion;
 
             Usuario usuario = new Usuario();
-            
+
             return View(usuario);
         }
 
@@ -45,7 +50,7 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
             usuario.Apellido = collection["Apellido"];
             usuario.Correo = collection["Correo"];
             usuario.Clave = collection["Clave"];
-            usuario.oTipoPersona.IdTipoPersona =Convert.ToInt32(collection["oTipoPersona.IdTipoPersona"]);
+            usuario.IdTipPer =Convert.ToInt32(collection["IdTipPer"]);
             try
             {
                 // TODO: Add insert logic here                
@@ -77,7 +82,7 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
             usuario.Apellido = collection["Apellido"];
             usuario.Correo = collection["Correo"];
             usuario.Clave = collection["Clave"];
-            usuario.oTipoPersona.IdTipoPersona = Convert.ToInt32(collection["oTipoPersona.IdTipoPersona"]);
+            usuario.IdTipPer = Convert.ToInt32(collection["IdTipPer"]);
             //usuario.IdUsuario= id;
             try
             {

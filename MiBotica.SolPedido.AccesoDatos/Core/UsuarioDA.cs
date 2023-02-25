@@ -82,7 +82,7 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
             if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
             {
                 if (!Convert.IsDBNull(reader["Descripcion"]))
-                    usuario.oTipoPersona.Descripcion = Convert.ToString(reader["Descripcion"]);
+                    usuario.Descripcion = Convert.ToString(reader["Descripcion"]);
             }
 
             reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Estado'";
@@ -131,8 +131,8 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
                     comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
                     comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
                     comando.Parameters.AddWithValue("@Correo", usuario.Correo);
-                    comando.Parameters.AddWithValue("@ClaveE", usuario.Clave);
-                    comando.Parameters.AddWithValue("@IdTipoPersona", usuario.oTipoPersona.IdTipoPersona);
+                    comando.Parameters.AddWithValue("@ClaveE", usuario.ClaveE);
+                    comando.Parameters.AddWithValue("@IdTipoPersona", usuario.IdTipPer);
                     conexion.Open();
                     comando.ExecuteNonQuery();
                 }
@@ -150,11 +150,11 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
                     //usuario = BuscarUsuario(id);
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@IdPersona", id);
-                    comando.Parameters.AddWithValue("@Clave", usuario.Clave);
+                    comando.Parameters.AddWithValue("@Clave", usuario.ClaveE);
                     comando.Parameters.AddWithValue("@Correo", usuario.Correo);
                     comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
                     comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
-                    comando.Parameters.AddWithValue("@IdTipoPersona", usuario.oTipoPersona.IdTipoPersona);
+                    comando.Parameters.AddWithValue("@IdTipoPersona", usuario.IdTipPer);
                     conexion.Open();
                     comando.ExecuteNonQuery();
                 }
@@ -227,6 +227,37 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
                 }
                 conexion.Close();
             }
+        }
+
+        public List<TipoUsuario> ListarDescripcion()
+        {
+            SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings[ConfigurationManager.AppSettings["cnnSql"]].ConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            List<TipoUsuario> listado = new List<TipoUsuario>();
+            try
+            {
+                conexion.Open();
+                cmd = new SqlCommand("sp_ListarDescripcion", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    TipoUsuario tipoUsuario = new TipoUsuario();
+                    tipoUsuario.IdTipoPersona = Convert.ToInt32(dr["ID"]);
+                    tipoUsuario.Descripcion = dr["Descripcion"].ToString();
+                    tipoUsuario.Estado = Convert.ToBoolean(dr["Estado"]);
+                    tipoUsuario.FechaCreacion = Convert.ToDateTime(dr["FechaCreacion"]);
+                    listado.Add(tipoUsuario);
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return listado;
         }
 
     }
