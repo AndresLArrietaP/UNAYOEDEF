@@ -68,7 +68,11 @@
   <ItemGroup>
     <Compile Include="Base\BaseLN.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Core\Cita.cs" />
+    <Compile Include="Core\EstadoServicio.cs" />
     <Compile Include="Core\Opcion.cs" />
+    <Compile Include="Core\Servicio.cs" />
+    <Compile Include="Core\TipoServicio.cs" />
     <Compile Include="Core\TipoUsuario.cs" />
     <Compile Include="Core\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
