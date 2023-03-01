@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseLN.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="VariablesWeb.cs" />
     <Compile Include="Core\Cita.cs" />
     <Compile Include="Core\EstadoServicio.cs" />
     <Compile Include="Core\Opcion.cs" />
