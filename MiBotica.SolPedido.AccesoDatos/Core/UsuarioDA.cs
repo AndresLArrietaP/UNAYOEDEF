@@ -84,6 +84,18 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
                 if (!Convert.IsDBNull(reader["Descripcion"]))
                     usuario.Descripcion = Convert.ToString(reader["Descripcion"]);
             }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Codigo'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Codigo"]))
+                    usuario.Codigo = Convert.ToString(reader["Codigo"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='nDNI'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["nDNI"]))
+                    usuario.ndni = Convert.ToInt32(reader["nDNI"]);
+            }
 
             reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Estado'";
             if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
@@ -133,6 +145,7 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
                     comando.Parameters.AddWithValue("@Correo", usuario.Correo);
                     comando.Parameters.AddWithValue("@ClaveE", usuario.ClaveE);
                     comando.Parameters.AddWithValue("@IdTipoPersona", usuario.IdTipPer);
+                    comando.Parameters.AddWithValue("@DNI", usuario.ndni);
                     conexion.Open();
                     comando.ExecuteNonQuery();
                 }
@@ -155,6 +168,10 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
                     comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
                     comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
                     comando.Parameters.AddWithValue("@IdTipoPersona", usuario.IdTipPer);
+                    comando.Parameters.AddWithValue("@DNI", usuario.ndni);
+                    //comando.Parameters.AddWithValue("@HoraI", usuario.HoraI);
+                    //comando.Parameters.AddWithValue("@HoraS", usuario.HoraS);
+                    //comando.Parameters.AddWithValue("@Especialidad", usuario.Especialidad);
                     conexion.Open();
                     comando.ExecuteNonQuery();
                 }

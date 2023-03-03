@@ -51,6 +51,7 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
             usuario.Correo = collection["Correo"];
             usuario.Clave = collection["Clave"];
             usuario.IdTipPer =Convert.ToInt32(collection["IdTipPer"]);
+            usuario.ndni= Convert.ToInt32(collection["nDNI"]);
             try
             {
                 // TODO: Add insert logic here                
@@ -83,7 +84,15 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
             usuario.Correo = collection["Correo"];
             usuario.Clave = collection["Clave"];
             usuario.IdTipPer = Convert.ToInt32(collection["IdTipPer"]);
-            //usuario.IdUsuario= id;
+            usuario.ndni = Convert.ToInt32(collection["nDNI"]);
+            //if (usuario.IdTipPer == 2|| usuario.IdTipPer == 3|| usuario.IdTipPer == 4|| usuario.IdTipPer == 5) {
+            //    usuario.HoraI = collection["HoraI"];
+            //    usuario.HoraS = collection["HoraS"];
+            //    usuario.Dias = collection["Dias"];
+            //    if (usuario.IdTipPer == 5) {
+            //        usuario.Especialidad = collection["Especialidad"];
+            //    }
+            //}
             try
             {
                 // TODO: Add update logic here

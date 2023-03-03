@@ -21,6 +21,7 @@ namespace MiBotica.SolPedido.Entidades.Core
         public string HoraS { get; set; }
         public string Dias { get; set; }
         public string Especialidad { get; set; }
+        public int ndni { get; set; }
         public byte[] ClaveE { get; set; }
 
     }

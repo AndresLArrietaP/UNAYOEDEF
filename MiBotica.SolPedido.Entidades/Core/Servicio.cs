@@ -19,6 +19,7 @@ namespace MiBotica.SolPedido.Entidades.Core
         //Usuario
         public string NEstudiante = new Usuario().Nombre;
         public string AEstudiante = new Usuario().Apellido;
+        public int dniEst = new Usuario().ndni;
         public int TEstudiante = new Usuario().IdTipPer;
         public string DEstudiante = new Usuario().Descripcion;
         public string NEmpleado = new Usuario().Nombre;
@@ -32,6 +33,7 @@ namespace MiBotica.SolPedido.Entidades.Core
         //Cita
         public DateTime FechaCita = new Cita().FechaCita;
         //Extra
+        public string RazonI { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaCierre { get; set; }
         public bool Estado { get; set; }

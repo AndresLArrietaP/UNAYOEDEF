@@ -40,7 +40,13 @@
                     @Html.DisplayNameFor(model => model.Correo)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.ndni)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Especialidad)
@@ -82,7 +88,13 @@
                         @Html.DisplayFor(modelItem => item.Correo)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.ndni)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Especialidad)
@@ -91,8 +103,8 @@
                         @Html.DisplayFor(modelItem => item.Estado)
                     </td>
                     @*<td>
-                        @Html.DisplayFor(modelItem => item.Fecha)
-                    </td>*@
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.HoraI)
                     </td>
@@ -103,8 +115,8 @@
                         @Html.DisplayFor(modelItem => item.Dias)
                     </td>
                     @*<td>
-                        @Html.DisplayNameFor(modelItem => model.ClaveTexto)
-                    </td>*@
+            @Html.DisplayNameFor(modelItem => model.ClaveTexto)
+        </td>*@
                     <td>
                         @Html.ActionLink("Edit", "Edit", new { id = item.IdPersona }) |
                         @*@Html.ActionLink("Details", "Details", new { id = item.IdPersona }) |*@
