@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Core\OpcionLN .cs" />
+    <Compile Include="Core\ServicioLN.cs" />
     <Compile Include="Core\UsuarioLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

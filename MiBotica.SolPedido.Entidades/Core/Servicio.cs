@@ -20,6 +20,7 @@ namespace MiBotica.SolPedido.Entidades.Core
         public string NEstudiante = new Usuario().Nombre;
         public string AEstudiante = new Usuario().Apellido;
         public int dniEst = new Usuario().ndni;
+        public string CodEst = new Usuario().Codigo;
         public int TEstudiante = new Usuario().IdTipPer;
         public string DEstudiante = new Usuario().Descripcion;
         public string NEmpleado = new Usuario().Nombre;
