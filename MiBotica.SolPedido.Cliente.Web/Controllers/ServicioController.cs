@@ -14,14 +14,14 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
     public class ServicioController : BaseLN
     {
         // GET: Servicio
-        public ActionResult NuevoS()
+        public ActionResult NuevoSRI()
         {
             Servicio nuevo = new Servicio();
             return View(nuevo);
         }
         // POST: Usuario/Create
         [HttpPost]
-        public ActionResult NuevoS(FormCollection collection)
+        public ActionResult NuevoSRI(FormCollection collection)
         {
             Servicio nuevo = new Servicio();
             nuevo.NEstudiante = collection["NEstudiante"];

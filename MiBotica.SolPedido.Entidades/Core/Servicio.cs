@@ -37,6 +37,6 @@ namespace MiBotica.SolPedido.Entidades.Core
         public string RazonI { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaCierre { get; set; }
-        public bool Estado { get; set; }
+        public string Resultado { get; set; }
     }
 }

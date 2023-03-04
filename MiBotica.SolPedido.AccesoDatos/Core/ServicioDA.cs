@@ -15,7 +15,7 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
         {
             using (SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings[ConfigurationManager.AppSettings["cnnSql"]].ConnectionString))
             {
-                using (SqlCommand comando = new SqlCommand("RegistrarServicio", conexion))
+                using (SqlCommand comando = new SqlCommand("dbo.RegistrarServicio", conexion))
                 {
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@Nombre", servicio.NEstudiante);
