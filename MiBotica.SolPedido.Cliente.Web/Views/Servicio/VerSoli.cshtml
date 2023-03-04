@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MiBotica.SolPedido.Entidades.Core.Servicio>
+
+@{
+    ViewBag.Title = "VerSoli";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SOLICITUDES</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.IdServicio)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.NEstudiante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AEstudiante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dniEst)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RazonI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodEst)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdEstudiante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.IdServicio)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NEstudiante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AEstudiante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dniEst)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazonI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodEst)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdEstudiante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaInicio)
+        </td>
+        <td>
+            @Html.ActionLink("VALIDAR", "Edit", new { /* id=item.PrimaryKey */ }) |
+        </td>
+    </tr>
+}
+
+</table>

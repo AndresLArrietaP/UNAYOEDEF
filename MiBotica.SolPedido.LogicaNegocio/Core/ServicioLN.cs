@@ -21,5 +21,17 @@ namespace MiBotica.SolPedido.LogicaNegocio.Core
                 throw;
             }
         }
+        public List<Servicio> ListaServiciosT1()
+        {
+            try
+            {
+                return new ServicioDA().ListaServiciosT1();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

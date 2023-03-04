@@ -13,13 +13,13 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
 {
     public class ServicioController : BaseLN
     {
-        // GET: Servicio
+        // GET: RegIni
         public ActionResult NuevoSRI()
         {
             Servicio nuevo = new Servicio();
             return View(nuevo);
         }
-        // POST: Usuario/Create
+        // POST: RegIni
         [HttpPost]
         public ActionResult NuevoSRI(FormCollection collection)
         {
@@ -41,6 +41,14 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
             {
                 return View();
             }
+        }
+
+        // GET: Ver solis
+        public ActionResult VerSoli()
+        {
+            List<Servicio> servicios = new List<Servicio>();
+            servicios = new ServicioDA().ListaServiciosT1();
+            return View(servicios);
         }
     }
 }
