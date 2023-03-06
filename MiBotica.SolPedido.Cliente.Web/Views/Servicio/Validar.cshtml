@@ -1,0 +1,74 @@
+﻿@model MiBotica.SolPedido.Entidades.Core.Servicio
+
+@{
+    ViewBag.Title = "Validar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Validar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dniEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dniEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RazonI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazonI)
+        </dd>
+    </dl>
+    <div class="form-horizontal">
+        <h4>CONFIRMAR</h4>
+        @*<hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.EstadoS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.IdEstSer, new List<SelectListItem>
+                   { new SelectListItem{Text="Validar", Value="2"},
+                     new SelectListItem{Text="No validar", Value="0"} }, "--Selecciona--")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="VALIDAR" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

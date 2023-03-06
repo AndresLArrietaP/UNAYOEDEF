@@ -1,22 +1,21 @@
 ﻿@model IEnumerable<MiBotica.SolPedido.Entidades.Core.Servicio>
 
 @{
-    ViewBag.Title = "VerSoli";
+    ViewBag.Title = "VerDeri";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>SOLICITUDES</h2>
-
+<h2>SOLICITUDES A DERIVAR</h2>
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
 <div class="box">
     <div class="box-body table-responsive no-padding">
         <table class="table">
             <tr>
                 @*<th>
-                    @Html.DisplayNameFor(model => model.IdServicio)
-                </th>*@
+                        @Html.DisplayNameFor(model => model.IdServicio)
+                    </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.NEstudiante)
                 </th>
@@ -48,8 +47,8 @@
             {
                 <tr>
                     @*<td>
-                            @Html.DisplayFor(modelItem => item.IdServicio)
-                    </td>*@
+                                @Html.DisplayFor(modelItem => item.IdServicio)
+                        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.NEstudiante)
                     </td>
@@ -75,7 +74,7 @@
                         @Html.DisplayFor(modelItem => item.FechaInicio)
                     </td>
                     <td>
-                        @Html.ActionLink("VALIDAR", "Validar", new { id = item.IdServicio })
+                        @Html.ActionLink("DERIVAR", "Derivar", new { id = item.IdServicio })
                     </td>
                 </tr>
             }

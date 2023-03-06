@@ -1,0 +1,95 @@
+﻿@model MiBotica.SolPedido.Entidades.Core.Servicio
+
+@{
+    ViewBag.Title = "RegistrarSoci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RegistrarSoci</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dniEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dniEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RazonI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazonI)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCita)
+        </dd>
+    </dl>
+    <div class="form-horizontal">
+        <h4>REGISTRAR</h4>
+        @*<hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.PreescripcionC, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.PreescripcionC, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PreescripcionC, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Recomendacion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Recomendacion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Recomendacion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="GUARDAR" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "AtenderSoci")
+</div>

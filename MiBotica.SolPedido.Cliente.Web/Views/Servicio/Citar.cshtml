@@ -1,0 +1,82 @@
+﻿@model MiBotica.SolPedido.Entidades.Core.Servicio
+
+@{
+    ViewBag.Title = "Citar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Citar</h2>
+
+<h3>¿Confirma los datos de la cita?</h3>
+<div>
+    <h4>Servicio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dniEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dniEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RazonI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazonI)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NEmpleado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCita)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="CITAR" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "VerACita")
+        </div>
+    }
+</div>

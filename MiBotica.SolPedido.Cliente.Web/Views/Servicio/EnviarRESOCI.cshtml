@@ -1,0 +1,91 @@
+﻿@model MiBotica.SolPedido.Entidades.Core.Servicio
+
+@{
+    ViewBag.Title = "EnviarRESOCI";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EnviarRESOCI</h2>
+
+<h3>¿Confirma los datos del resultado?</h3>
+<div>
+    <h4>RESULTADOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dniEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dniEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RazonI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazonI)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCita)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PreescripcionC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreescripcionC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Recomendacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recomendacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="GUARDAR" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "AtenderSoci")
+        </div>
+    }
+</div>

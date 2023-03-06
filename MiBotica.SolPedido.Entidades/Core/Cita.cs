@@ -9,6 +9,9 @@ namespace MiBotica.SolPedido.Entidades.Core
     public class Cita
     {
         public int IdCita { get; set; }
+        public string Preescripcion { get; set; }
+        public string Recomendaciones { get; set; }
         public DateTime FechaCita{ get; set; }
+        
     }
 }

@@ -1,0 +1,120 @@
+﻿@model IEnumerable<MiBotica.SolPedido.Entidades.Core.Servicio>
+
+@{
+    ViewBag.Title = "AtenderSoci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AtenderSoci</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="box">
+    <div class="box-body table-responsive no-padding">
+        <table class="table">
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.IdServicio)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.NEstudiante)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AEstudiante)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dniEst)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RazonI)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CodEst)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.IdEstudiante)
+                    </th>*@
+                @*<th>
+                        @Html.DisplayNameFor(model => model.TipoS)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.EstadoS)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.FechaInicio)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.NEmpleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PreescripcionC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Recomendacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaCita)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                                @Html.DisplayFor(modelItem => item.IdServicio)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NEstudiante)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AEstudiante)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dniEst)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RazonI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodEst)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.IdEstudiante)
+                        </td>*@
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.TipoS)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EstadoS)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.FechaInicio)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NEmpleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PreescripcionC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Recomendacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaCita)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("ATENDER", "RegistrarSoci", new { id = item.IdServicio })|
+                        @*@if (VariablesWeb.gServicio.IdEmpleado != null)
+                        {*@
+                        @Html.ActionLink("REGISTRAR", "EnviarRESOCI", new { id = item.IdServicio })
+                        @*}*@
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

@@ -32,7 +32,11 @@ namespace MiBotica.SolPedido.Entidades.Core
         //EstadoS
         public string EstadoS = new EstadoServicio().Descripcion;
         //Cita
+        public string Recomendacion= new Cita().Recomendaciones;
+        public string PreescripcionC = new Cita().Preescripcion;
         public DateTime FechaCita = new Cita().FechaCita;
+        //TCita
+        public string TipoC = new TipoCita().Descripcion;
         //Extra
         public string RazonI { get; set; }
         public DateTime FechaInicio { get; set; }

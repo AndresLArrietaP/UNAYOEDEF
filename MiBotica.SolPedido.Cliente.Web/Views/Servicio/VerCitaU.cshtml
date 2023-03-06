@@ -1,0 +1,76 @@
+﻿@model IEnumerable<MiBotica.SolPedido.Entidades.Core.Servicio>
+
+@{
+    ViewBag.Title = "VerCitaU";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>VerCitaU</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<div class="box">
+    <div class="box-body table-responsive no-padding">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdCita)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dniEst)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CodEst)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NEmpleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PreescripcionC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Recomendacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaCita)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdCita)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dniEst)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodEst)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NEmpleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PreescripcionC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Recomendacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaCita)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

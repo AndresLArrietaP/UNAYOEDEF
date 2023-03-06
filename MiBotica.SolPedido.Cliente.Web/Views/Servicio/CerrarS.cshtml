@@ -1,0 +1,90 @@
+﻿@model MiBotica.SolPedido.Entidades.Core.Servicio
+
+@{
+    ViewBag.Title = "CerrarS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CerrarS</h2>
+
+<h3>¿Cerrar servicio?</h3>
+<div>
+    <h4>DATOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AEstudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AEstudiante)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dniEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dniEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodEst)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PreescripcionC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreescripcionC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCita)
+        </dd>
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Recomendacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recomendacion)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="CERRAR" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "VerCerrar")
+        </div>
+    }
+</div>

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<MiBotica.SolPedido.Entidades.Core.Servicio>
 
 @{
-    ViewBag.Title = "VerSoli";
+    ViewBag.Title = "AtenderPsi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>SOLICITUDES</h2>
+<h2>AtenderPsi</h2>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
@@ -32,14 +32,29 @@
                 <th>
                     @Html.DisplayNameFor(model => model.CodEst)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IdEstudiante)
-                </th>
+                @*<th>
+            @Html.DisplayNameFor(model => model.IdEstudiante)
+        </th>*@
+                @*<th>
+            @Html.DisplayNameFor(model => model.TipoS)
+        </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.EstadoS)
                 </th>
+                @*<th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>*@
                 <th>
-                    @Html.DisplayNameFor(model => model.FechaInicio)
+                    @Html.DisplayNameFor(model => model.NEmpleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PreescripcionC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Recomendacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaCita)
                 </th>
                 <th></th>
             </tr>
@@ -48,7 +63,7 @@
             {
                 <tr>
                     @*<td>
-                            @Html.DisplayFor(modelItem => item.IdServicio)
+                        @Html.DisplayFor(modelItem => item.IdServicio)
                     </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.NEstudiante)
@@ -65,17 +80,37 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.CodEst)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdEstudiante)
-                    </td>
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.IdEstudiante)
+        </td>*@
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.TipoS)
+        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.EstadoS)
                     </td>
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.FechaInicio)
+        </td>*@
                     <td>
-                        @Html.DisplayFor(modelItem => item.FechaInicio)
+                        @Html.DisplayFor(modelItem => item.NEmpleado)
                     </td>
                     <td>
-                        @Html.ActionLink("VALIDAR", "Validar", new { id = item.IdServicio })
+                        @Html.DisplayFor(modelItem => item.PreescripcionC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Recomendacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaCita)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("ATENDER", "RegistrarPsi", new { id = item.IdServicio })|
+                        @*@if (VariablesWeb.gServicio.IdEmpleado != null)
+            {*@
+                        @Html.ActionLink("REGISTRAR", "EnviarREPSI", new { id = item.IdServicio })
+                        @*}*@
                     </td>
                 </tr>
             }

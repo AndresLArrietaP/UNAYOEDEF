@@ -7320,6 +7320,25 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Servicio\NuevoSRI.cshtml" />
     <Content Include="Views\Servicio\VerSoli.cshtml" />
+    <Content Include="Views\Servicio\Validar.cshtml" />
+    <Content Include="Views\Servicio\VerDeri.cshtml" />
+    <Content Include="Views\Servicio\Derivar.cshtml" />
+    <Content Include="Views\Servicio\VerACita.cshtml" />
+    <Content Include="Views\Servicio\Programar.cshtml" />
+    <Content Include="Views\Servicio\Citar.cshtml" />
+    <Content Include="Views\Servicio\AtenderPsi.cshtml" />
+    <Content Include="Views\Servicio\AtenderSoci.cshtml" />
+    <Content Include="Views\Servicio\RegistrarPsi.cshtml" />
+    <Content Include="Views\Servicio\RegistrarSoci.cshtml" />
+    <Content Include="Views\Servicio\EnviarRESOCI.cshtml" />
+    <Content Include="Views\Servicio\EnviarREPSI.cshtml" />
+    <Content Include="Views\Servicio\VerResultados.cshtml" />
+    <Content Include="Views\Servicio\GuardarR.cshtml" />
+    <Content Include="Views\Servicio\VerCerrar.cshtml" />
+    <Content Include="Views\Servicio\CerrarS.cshtml" />
+    <Content Include="Views\Servicio\VerServAll.cshtml" />
+    <Content Include="Views\Servicio\VerCitaU.cshtml" />
+    <Content Include="Views\Servicio\VerServicioU.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
