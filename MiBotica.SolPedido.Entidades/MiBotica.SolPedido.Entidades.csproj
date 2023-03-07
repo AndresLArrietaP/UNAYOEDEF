@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseLN.cs" />
+    <Compile Include="Core\DSistema.cs" />
     <Compile Include="Core\TipoCita.cs" />
     <Compile Include="VariablesWeb.cs" />
     <Compile Include="Core\Cita.cs" />

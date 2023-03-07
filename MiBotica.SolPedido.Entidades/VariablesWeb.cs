@@ -52,6 +52,18 @@ namespace MiBotica.SolPedido.Entidades
             }
             set { HttpContext.Current.Session["gServicio"] = value; }
         }
+        public static DSistema gDatosS
+        {
+            get
+            {
+                if (HttpContext.Current.Session["gDatosS"] != null)
+                {
+                    return (DSistema)HttpContext.Current.Session["gDatosS"];
+                }
+                return null;
+            }
+            set { HttpContext.Current.Session["gDatosS"] = value; }
+        }
     }
 
 }

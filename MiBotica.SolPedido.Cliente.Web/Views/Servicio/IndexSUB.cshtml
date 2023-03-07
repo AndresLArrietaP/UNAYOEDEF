@@ -1,0 +1,20 @@
+﻿@using MiBotica.SolPedido.Entidades.Core
+@using MiBotica.SolPedido.Utiles.Helpers
+@using MiBotica.SolPedido.Entidades
+@{
+    ViewBag.Title = "IndexSUB";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/servicios.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Servicios</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CServicio
+            </span>
+        </div>
+    </div>
+</div>
+

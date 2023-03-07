@@ -21,7 +21,7 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         // GET: RegIni
         [HttpGet]
         public ActionResult NuevoSRI()
-        {
+        {   
             Servicio nuevo = new Servicio();
             return View(nuevo);
         }
@@ -29,6 +29,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult NuevoSRI(FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio nuevo = new Servicio();
             nuevo.NEstudiante = collection["NEstudiante"];
             nuevo.AEstudiante = collection["AEstudiante"];
@@ -41,7 +45,7 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
                 // TODO: Add insert logic here                
                 /*usuario.ClaveE = EncriptacionHelper.EncriptarByte(usuario.Clave);*/
                 new ServicioLN().RegistrarServicio(nuevo);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             catch
             {
@@ -53,6 +57,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult VerSoli()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             List<Servicio> servicios = new List<Servicio>();
             servicios = new ServicioLN().ListaServiciosT1();
             return View(servicios);
@@ -62,6 +70,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult Validar(int id)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio validacion = new Servicio();
             validacion = new ServicioLN().BuscarServicio(id);
             //usuario.Clave = EncriptacionHelper.DecriptarString(usuario.ClaveE);
@@ -71,6 +83,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult Validar(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio validacion = new Servicio();
             validacion.IdEstSer = Convert.ToInt32(collection["IdEstSer"]);
             try
@@ -90,6 +106,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult VerDeri()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             List<Servicio> serviciosd = new List<Servicio>();
             serviciosd = new ServicioLN().ListaServiciosT2();
             return View(serviciosd);
@@ -99,6 +119,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult Derivar(int id)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio derivacion = new Servicio();
             derivacion = new ServicioLN().BuscarServicio(id);
             return View(derivacion);
@@ -106,6 +130,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult Derivar(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio derivacion = new Servicio();
             derivacion.IdTipSer = Convert.ToInt32(collection["IdTipSer"]);
             try
@@ -124,6 +152,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult VerACita()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             List<Servicio> serviciosacit = new List<Servicio>();
             serviciosacit = new ServicioLN().ListaServiciosT3();
             return View(serviciosacit);
@@ -136,6 +168,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
             //psicologos = new ServicioLN().ListaPsicologos();
             //ViewBag.psicologos = new SelectList(psicologos, "IdPersona", "Nombre");
             //Envia datos
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio programacion = new Servicio();
             programacion = new ServicioLN().BuscarServicio(id);
             return View(programacion);
@@ -143,6 +179,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult Programar(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio programado = new Servicio();
             programado.IdEmpleado = Convert.ToInt32(collection["IdEmpleado"]);
             programado.FechaCita = Convert.ToDateTime(collection["FechaCita"]);
@@ -159,6 +199,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult Citar(int id)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio citar = new Servicio();
             citar = new ServicioLN().BuscarServicio(id);
             return View(citar);
@@ -167,6 +211,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult Citar(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             try
             {
                 new ServicioLN().PasarT4(id);
@@ -181,6 +229,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult AtenderPsi()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             int id = VariablesWeb.gUsuario.IdPersona;
             List<Servicio> atenderpsi = new List<Servicio>();
             atenderpsi = new ServicioLN().ListaServiciosT4PSI(id);
@@ -189,6 +241,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult AtenderSoci()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             int id = VariablesWeb.gUsuario.IdPersona;
             List<Servicio> atendersoci = new List<Servicio>();
             atendersoci = new ServicioLN().ListaServiciosT4SOCI(id);
@@ -198,6 +254,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult RegistrarPsi(int id)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio atencion = new Servicio();
             atencion = new ServicioLN().BuscarServicio(id);
             return View(atencion);
@@ -205,6 +265,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult RegistrarPsi(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio atencion = new Servicio();
             atencion.PreescripcionC = Convert.ToString(collection["PreescripcionC"]);
             atencion.Recomendacion = Convert.ToString(collection["Recomendacion"]);
@@ -221,6 +285,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult RegistrarSoci(int id)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio atencion = new Servicio();
             atencion = new ServicioLN().BuscarServicio(id);
             return View(atencion);
@@ -228,6 +296,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult RegistrarSoci(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio atencion = new Servicio();
             atencion.PreescripcionC = Convert.ToString(collection["PreescripcionC"]);
             atencion.Recomendacion = Convert.ToString(collection["Recomendacion"]);
@@ -244,6 +316,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult EnviarREPSI(int id)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio resultado = new Servicio();
             resultado = new ServicioLN().BuscarServicio(id);
             return View(resultado);
@@ -251,6 +327,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult EnviarREPSI(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             try
             {
                 new ServicioLN().PasarT5(id);
@@ -264,6 +344,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult EnviarRESOCI(int id)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio resultado = new Servicio();
             resultado = new ServicioLN().BuscarServicio(id);
             return View(resultado);
@@ -271,6 +355,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult EnviarRESOCI(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             try
             {
                 new ServicioLN().PasarT5(id);
@@ -284,6 +372,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult VerResultados()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             List<Servicio> serviciosaguar = new List<Servicio>();
             serviciosaguar = new ServicioLN().ListaServiciosT5();
             return View(serviciosaguar);
@@ -291,6 +383,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult GuardarR(int id)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio guardado = new Servicio();
             guardado = new ServicioLN().BuscarServicio(id);
             return View(guardado);
@@ -298,6 +394,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult GuardarR(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             try
             {
                 new ServicioLN().PasarT6(id);
@@ -311,6 +411,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult VerCerrar()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             List<Servicio> serviciosacerr = new List<Servicio>();
             serviciosacerr = new ServicioLN().ListaServiciosT6();
             return View(serviciosacerr);
@@ -318,6 +422,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult CerrarS(int id)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             Servicio cerrado = new Servicio();
             cerrado = new ServicioLN().BuscarServicio(id);
             return View(cerrado);
@@ -325,6 +433,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpPost]
         public ActionResult CerrarS(int id, FormCollection collection)
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             try
             {
                 new ServicioLN().PasarT7(id);
@@ -338,6 +450,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult VerServAll()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             List<Servicio> serviciover = new List<Servicio>();
             serviciover = new ServicioLN().ListaServicioALL();
             return View(serviciover);
@@ -346,6 +462,10 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult VerCitaU()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             int id = VariablesWeb.gUsuario.IdPersona;
             List<Servicio> citasuser = new List<Servicio>();
             citasuser = new ServicioLN().ListaCitasU(id);
@@ -354,10 +474,54 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
         [HttpGet]
         public ActionResult VerServicioU()
         {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
             int id = VariablesWeb.gUsuario.IdPersona;
             List<Servicio> servuser = new List<Servicio>();
             servuser = new ServicioLN().ListaServsU(id);
             return View(servuser);
+        }
+        public ActionResult IndexAdmin()
+        {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
+            return View();
+        }
+        public ActionResult IndexEUNAYOE()
+        {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
+            return View();
+        }
+        public ActionResult IndexEUB()
+        {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
+            return View();
+        }
+        public ActionResult IndexSUB()
+        {
+            //dat
+            DSistema DSistema = new ServicioLN().BuscarDatos();
+            VariablesWeb.gDatosS = DSistema;
+            //dat
+            return View();
+        }
+        public ActionResult IndexPsicologo()
+        {
+            return View();
+        }
+        public ActionResult IndexEstudiante()
+        {
+            return View();
         }
     }
 }

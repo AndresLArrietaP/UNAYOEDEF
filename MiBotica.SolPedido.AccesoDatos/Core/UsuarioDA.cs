@@ -128,6 +128,12 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
                 if (!Convert.IsDBNull(reader["Especialidad"]))
                     usuario.Especialidad = Convert.ToString(reader["Especialidad"]);
             }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='IdTipoPersona'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["IdTipoPersona"]))
+                    usuario.IdTipPer = Convert.ToInt32(reader["IdTipoPersona"]);
+            }
 
             return usuario;
 

@@ -32,6 +32,17 @@ namespace MiBotica.SolPedido.LogicaNegocio.Core
                 throw;
             }
         }
+        public DSistema BuscarDatos()
+        {
+            try
+            {
+                return new ServicioDA().BuscarDatos();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public List<Servicio> ListaServiciosT1()
         {
             try

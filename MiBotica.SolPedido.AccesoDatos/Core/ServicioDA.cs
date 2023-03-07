@@ -221,6 +221,161 @@ namespace MiBotica.SolPedido.AccesoDatos.Core
             }
             return usuario;
         }
+
+        public DSistema LlenarEDATOS(IDataReader reader)
+        {
+            DSistema datos = new DSistema();
+
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CUsuario'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CUsuario"]))
+                    datos.CUsuario = Convert.ToInt32(reader["CUsuario"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CServicio'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CServicio"]))
+                    datos.CServicio = Convert.ToInt32(reader["CServicio"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CCita'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CCita"]))
+                    datos.CCita = Convert.ToInt32(reader["CCita"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CCitaPsi'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CCitaPsi"]))
+                    datos.CCitaPsi = Convert.ToInt32(reader["CCitaPsi"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CCitaSoci'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CCitaSoci"]))
+                    datos.CCitaSoci = Convert.ToInt32(reader["CCitaSoci"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv1'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv1"]))
+                    datos.Cserv1 = Convert.ToInt32(reader["Cserv1"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv2'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv2"]))
+                    datos.Cserv2 = Convert.ToInt32(reader["Cserv2"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv3'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv3"]))
+                    datos.Cserv3 = Convert.ToInt32(reader["Cserv3"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv4'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv4"]))
+                    datos.Cserv4 = Convert.ToInt32(reader["Cserv4"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv5'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv5"]))
+                    datos.Cserv5 = Convert.ToInt32(reader["Cserv5"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv6'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv6"]))
+                    datos.Cserv6 = Convert.ToInt32(reader["Cserv6"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv7'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv7"]))
+                    datos.Cserv7 = Convert.ToInt32(reader["Cserv7"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv0'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv0"]))
+                    datos.Cserv0 = Convert.ToInt32(reader["Cserv0"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CUsuarioT1'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CUsuarioT1"]))
+                    datos.CUsuarioT1 = Convert.ToInt32(reader["CUsuarioT1"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CUsuarioT2'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CUsuarioT2"]))
+                    datos.CUsuarioT2 = Convert.ToInt32(reader["CUsuarioT2"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CUsuarioT3'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CUsuarioT3"]))
+                    datos.CUsuarioT3 = Convert.ToInt32(reader["CUsuarioT3"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CUsuarioT4'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CUsuarioT4"]))
+                    datos.CUsuarioT4 = Convert.ToInt32(reader["CUsuarioT4"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CUsuarioT5'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CUsuarioT5"]))
+                    datos.CUsuarioT5 = Convert.ToInt32(reader["CUsuarioT5"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='CUsuarioT6'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["CUsuarioT6"]))
+                    datos.CUsuarioT6 = Convert.ToInt32(reader["CUsuarioT6"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv4Psi'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv4Psi"]))
+                    datos.Cserv4Psi = Convert.ToInt32(reader["Cserv4Psi"]);
+            }
+            reader.GetSchemaTable().DefaultView.RowFilter = "ColumnName='Cserv4Soci'";
+            if (reader.GetSchemaTable().DefaultView.Count.Equals(1))
+            {
+                if (!Convert.IsDBNull(reader["Cserv4Soci"]))
+                    datos.Cserv4Soci = Convert.ToInt32(reader["Cserv4Soci"]);
+            }
+            return datos;
+        }
+        public DSistema BuscarDatos()
+        {
+            DSistema DATOS = null;
+            using (SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings[ConfigurationManager.AppSettings["cnnSql"]].ConnectionString))
+            {
+
+                using (SqlCommand comando = new SqlCommand("VerCant", conexion))
+                {
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    conexion.Open();
+                    SqlDataReader reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        DATOS = LlenarEDATOS(reader);
+
+                    }
+
+                    conexion.Close();
+                }
+            }
+            return DATOS;
+        }
         public Servicio BuscarServicio(int id)
         {
             Servicio sentidad = new Servicio();

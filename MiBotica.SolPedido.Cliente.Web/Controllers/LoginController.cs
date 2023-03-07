@@ -36,6 +36,7 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
                     usuario.ClaveE = EncriptacionHelper.EncriptarByte(usuario.Clave);
 
                     Usuario res = new UsuarioLN().BuscarUsuarioOpcion(usuario);
+                    DSistema DSistema = new ServicioLN().BuscarDatos();
 
                     if (res != null && res.IdPersona > 0)  //las credenciales son correctas
                     {
@@ -48,9 +49,24 @@ namespace MiBotica.SolPedido.Cliente.Web.Controllers
                         VariablesWeb.gOpciones = lista;
                         Log.Info("Llego las opciones. " + VariablesWeb.gOpciones.Count().ToString());
                         VariablesWeb.gUsuario = res;
-
-                        return RedirectToAction("Index", "Home");
-
+                        VariablesWeb.gDatosS = DSistema;
+                        switch (res.IdTipPer)
+                        {
+                            case 1:
+                                return RedirectToAction("IndexAdmin", "Servicio");
+                                
+                            case 2:
+                                return RedirectToAction("IndexEUNAYOE", "Servicio");
+                                
+                            case 3:
+                                return RedirectToAction("IndexEUB", "Servicio");
+                            case 4:
+                                return RedirectToAction("IndexSUB", "Servicio");
+                            case 5:
+                                return RedirectToAction("Index", "Home");
+                            case 6:
+                                return RedirectToAction("Index", "Home");
+                        }                       
                     }
                     else
                     {

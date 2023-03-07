@@ -6,7 +6,10 @@
 }
 
 <h2>Programar</h2>
-
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -71,7 +74,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.FechaCita, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.FechaCita, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.FechaCita, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local" } })
             @Html.ValidationMessageFor(model => model.FechaCita, "", new { @class = "text-danger" })
             @*@Html.DropDownListFor(model => model.IdEmpleado, ViewBag.psicologos as SelectList, "Seleccionar", htmlAttributes: new { @class = "form-control" })*@
         </div>
@@ -86,5 +89,17 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "VerACita")
+    @Html.ActionLink("VOLVER", "VerACita")
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>config = {
+        enableTime: true,
+        dateFormat: "d-m-Y H:i",
+        altInput: true,
+        altFormat: "F j, Y (h:S K)",
+        defaultDate: null
+            }
+    flatpickr("input[type=datetime-local]", config);
+</script>
+</body>

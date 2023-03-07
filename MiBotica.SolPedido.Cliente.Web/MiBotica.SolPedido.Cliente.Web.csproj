@@ -6666,6 +6666,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\admin.jpg" />
+    <Content Include="Imagenes\citas.jpg" />
+    <Content Include="Imagenes\empleadouna.jpg" />
+    <Content Include="Imagenes\empleunayoe.jpg" />
+    <Content Include="Imagenes\estudiante.jpg" />
+    <Content Include="Imagenes\estudiantes.jpg" />
+    <Content Include="Imagenes\psicologo.jpeg" />
+    <Content Include="Imagenes\psicologo.jpg" />
+    <Content Include="Imagenes\secretariounid.jpg" />
+    <Content Include="Imagenes\servicios.jpg" />
     <Content Include="Imagenes\UNAYOE.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -7339,6 +7349,10 @@
     <Content Include="Views\Servicio\VerServAll.cshtml" />
     <Content Include="Views\Servicio\VerCitaU.cshtml" />
     <Content Include="Views\Servicio\VerServicioU.cshtml" />
+    <Content Include="Views\Servicio\IndexAdmin.cshtml" />
+    <Content Include="Views\Servicio\IndexEUNAYOE.cshtml" />
+    <Content Include="Views\Servicio\IndexEUB.cshtml" />
+    <Content Include="Views\Servicio\IndexSUB.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

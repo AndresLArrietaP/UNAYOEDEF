@@ -1,0 +1,214 @@
+﻿@using MiBotica.SolPedido.Entidades.Core
+@using MiBotica.SolPedido.Utiles.Helpers
+@using MiBotica.SolPedido.Entidades
+@{
+    ViewBag.Title = "IndexAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*NUM. USUARIOS*@
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/estudiantes.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Usuarios</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CUsuario
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/servicios.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Servicios</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CServicio
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/citas.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Citas</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CCita
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/admin.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Administradores</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CUsuarioT1
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/empleunayoe.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Empleados UNAYOE</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CUsuarioT2
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/empleadouna.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Empleados Unidad de <br>Bienestar</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CUsuarioT3
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/secretariounid.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Secretarios de <br>Unidad de Bienestar</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CUsuarioT4
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/psicologo.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Psicologos</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CUsuarioT5
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <img src="~/Imagenes/estudiante.jpg" style="width: 90px; height: 90px; float: left; padding: 4px; ">
+        <div class="info-box-content">
+            <span class="info-box-text">Estudiantes</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.CUsuarioT6
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-red">
+            <i class="fa fa-star-o"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Enviado</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv1
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-green">
+            <i class="fa fa-star-half"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Validado</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv2
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-blue">
+            <i class="fa fa-star-half-o"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Derivado</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv3
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-orange">
+            <i class="fa fa-star-half-o"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: En Espera</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv4
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-yellow">
+            <i class="fa fa-star-half-empty"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Atendido</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv5
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-purple">
+            <i class="fa fa-star-half-empty"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Procesando</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv6
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-gray">
+            <i class="fa fa-star-half-full"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Cerrado</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv7
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-black">
+            <i class="fa fa-stop-circle"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Rechazado</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv0
+            </span>
+        </div>
+    </div>
+</div>
+

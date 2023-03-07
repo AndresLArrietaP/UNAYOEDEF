@@ -1,0 +1,22 @@
+﻿@using MiBotica.SolPedido.Entidades.Core
+@using MiBotica.SolPedido.Utiles.Helpers
+@using MiBotica.SolPedido.Entidades
+@{
+    ViewBag.Title = "IndexEUNAYOE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-red">
+            <i class="fa fa-star-o"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Enviado</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv1
+            </span>
+        </div>
+    </div>
+</div>
+

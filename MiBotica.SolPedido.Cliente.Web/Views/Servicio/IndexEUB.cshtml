@@ -1,0 +1,86 @@
+﻿@using MiBotica.SolPedido.Entidades.Core
+@using MiBotica.SolPedido.Utiles.Helpers
+@using MiBotica.SolPedido.Entidades
+@{
+    ViewBag.Title = "IndexEUB";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-green">
+            <i class="fa fa-star-half"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Validado</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv2
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-blue">
+            <i class="fa fa-star-half-o"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Derivado</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv3
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-orange">
+            <i class="fa fa-star-half-o"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: En Espera</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv4
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-yellow">
+            <i class="fa fa-star-half-empty"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Atendido</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv5
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-purple">
+            <i class="fa fa-star-half-empty"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Procesando</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv6
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+        <span class="info-box-icon bg-gray">
+            <i class="fa fa-star-half-full"></i>
+        </span>
+        <div class="info-box-content">
+            <span class="info-box-text">S. Estado: Cerrado</span>
+            <span class="info-box-number">
+                @VariablesWeb.gDatosS.Cserv7
+            </span>
+        </div>
+    </div>
+</div>
